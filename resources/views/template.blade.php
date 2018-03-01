@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-      @yield('title')
+      INSAviron - @yield('titre')
     </title>
 
     <!-- Bootstrap -->
@@ -42,19 +42,23 @@
               <div class="collapse navbar-collapse navbar-right">
                   <ul class="nav navbar-nav">
                       <li class="{{ isActiveRoute('home') }}"><a href="{{ route('home') }}">Accueil</a></li>
-                      <li><a href="about-us.html">À propos</a></li>
-                      <li><a href="services.html">Infos pratiques</a></li>
-                      <li><a href="blog.html">Inscription</a></li>
-                      <li><a href="portfolio.html">Programmation, résultats et news</a></li>
-                      <li><a href="portfolio.html">Gallerie</a></li>
-                      <li><a href="contact-us.html">Contact</a></li>
+                      <li class="{{ isActiveRoute('about-us') }}"><a href="{{ route('about-us') }}">À propos</a></li>
+                      <li class="{{ isActiveRoute('infos') }}"><a href="{{ route('infos') }}">Infos pratiques</a></li>
+                      <li class="{{ isActiveRoute('inscription') }}"><a href="{{ route('inscription') }}">Inscription</a></li>
+                      <li class="{{ isActiveRoute('news') }}"><a href="{{ route('news') }}">Programmation, résultats et news</a></li>
+                      <li class="{{ isActiveRoute('gallery') }}"><a href="{{ route('gallery') }}">Gallerie</a></li>
+                      <li class="{{ isActiveRoute('contact') }}"><a href="{{ route('contact') }}">Contact</a></li>
                   </ul>
               </div>
           </div><!--/.container-->
       </nav><!--/nav-->
     </header><!--/header-->
 
-	  @yield('contenu')
+    <div id="wrap">
+      <div id="main" class="container clear-top">
+        @yield('contenu')
+      </div>
+    </div>
 
     <footer id="footer" class="midnight-blue">
         <div class="container">
