@@ -11,9 +11,36 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'home', function () {
     return view('index');
-});
+}]);
+
+Route::get('/apropos', ['as' => 'about-us', function () {
+    return view('about-us');
+}]);
+
+Route::get('/infos', ['as' => 'infos', function () {
+    return view('infos');
+}]);
+
+Route::get('/inscription', ['as' => 'inscription', function () {
+    return view('inscription');
+}]);
+
+Route::get('/news', ['as' => 'news', function () {
+    return view('news');
+}]);
+
+Route::get('/gallery', ['as' => 'gallery', function () {
+    return view('gallery');
+}]);
+
+Route::get('/contact', ['as' => 'contact', function () {
+    return view('contact');
+}]);
+
+
+////// EXEMPLES D'UTILISATION
 
 // // Aller chercher le controller dans WelcomeController
 // Route::get('index', 'WelcomeController@index');
