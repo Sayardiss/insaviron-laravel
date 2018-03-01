@@ -385,7 +385,18 @@ ul.social-share li a:hover {
   background: none;
 }
 
-
+/* Pour garder un carrousel de hauteur constante */
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: auto;
+  height: 50vh;
+  max-height: 400px;
+  margin:auto;
+}
 
 #feature {
   background: #f2f2f2;
