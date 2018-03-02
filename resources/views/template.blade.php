@@ -25,7 +25,7 @@
 
   <body class="homepage">
 
-    <!-- Menu à généraliser   -->
+    <!-- Menu principal   -->
     <header id="header">
       <nav class="navbar navbar-fixed-top" role="banner">
           <div class="container">
@@ -36,7 +36,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="index.html">INSAviron</a>
+                  <a class="navbar-brand" href="{{ route('home') }}">INSAviron</a>
               </div>
 
               <div class="collapse navbar-collapse navbar-right">
@@ -54,12 +54,14 @@
       </nav><!--/nav-->
     </header><!--/header-->
 
+    <!-- Contenu principal de la page -->
     <div id="wrap">
       <div id="main" class="container clear-top">
         @yield('contenu')
       </div>
     </div>
 
+    <!-- Footer. Faites comme vous le sentez pour le lien bootstraptaste ! -->
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">

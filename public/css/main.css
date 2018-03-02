@@ -342,7 +342,8 @@ ul.social-share li a:hover {
 
 .slider {
   position: relative;
-  margin-top:130px;
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
 
 #carousel-slider {
