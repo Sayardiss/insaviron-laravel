@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-    INSAviron - Accueil
+    Accueil
 @stop
 
 @section('contenu')
