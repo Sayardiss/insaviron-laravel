@@ -35,10 +35,13 @@ Route::get('/gallery', ['as' => 'gallery', function () {
     return view('gallery');
 }]);
 
-Route::get('/contact', ['as' => 'contact', function () {
-    return view('contact');
-}]);
+// Route::get('/contact', ['as' => 'contact', function () {
+//     return view('contact');
+// }]);
 
+
+Route::get('contact', 'ContactController@getContact')->name('contact');
+Route::post('contact', 'ContactController@postContact');
 
 ////// EXEMPLES D'UTILISATION
 
