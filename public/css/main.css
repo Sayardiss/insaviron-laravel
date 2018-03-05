@@ -128,6 +128,11 @@ body > section {
   padding-bottom:150px; /* this needs to be bigger than footer height*/
 }
 
+.listBoats div {
+  display: inline
+  float: left;
+}
+
 
 .center {
   text-align: center;
