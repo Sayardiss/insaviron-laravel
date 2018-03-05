@@ -11,12 +11,12 @@
     </title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
+    <link href="{{ URL::asset('css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/prettyPhoto.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/responsive.css') }}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -83,11 +83,11 @@
     </footer><!--/#footer-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{ URL::asset('js/jquery.js') }}"></script>
+    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.prettyPhoto.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.isotope.min.js') }}"></script>
+    <script src="{{ URL::asset('js/wow.min.js') }}"></script>
+    <script src="{{ URL::asset('js/main.js') }}"></script>
   </body>
 </html>
