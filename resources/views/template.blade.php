@@ -45,7 +45,7 @@
                       <li class="{{ isActiveRoute('about-us') }}"><a href="{{ route('about-us') }}">À propos</a></li>
                       <li class="{{ isActiveRoute('infos') }}"><a href="{{ route('infos') }}">Infos pratiques</a></li>
                       <li class="{{ isActiveRoute('inscription') }}"><a href="{{ route('inscription') }}">Inscription</a></li>
-                      <li class="{{ isActiveRoute('news') }}"><a href="{{ route('news') }}">Programmation, résultats et news</a></li>
+                      <li class="{{ isActiveRoute('posts.index') }}"><a href="{{ route('posts.index') }}">Programmation, résultats et news</a></li>
                       <li class="{{ isActiveRoute('gallery') }}"><a href="{{ route('gallery') }}">Gallerie</a></li>
                       <li class="{{ isActiveRoute('contact') }}"><a href="{{ route('contact') }}">Contact</a></li>
                   </ul>

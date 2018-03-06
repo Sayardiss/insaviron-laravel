@@ -29,5 +29,12 @@ function areActiveRoutes(Array $routes, $output = "active")
     {
         if (Route::currentRouteName() == $route) return $output;
     }
+}
 
+// Helper pour convertir à la volée md->html
+
+use Michelf\Markdown;
+function markdownToHtml($text)
+{
+  return Markdown::defaultTransform("$text");
 }

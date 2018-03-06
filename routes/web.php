@@ -27,9 +27,9 @@ Route::get('/inscription', ['as' => 'inscription', function () {
     return view('inscription');
 }]);
 
-Route::get('/news', ['as' => 'news', function () {
-    return view('news');
-}]);
+// Route::get('/news', ['as' => 'news', function () {
+//     return view('news');
+// }]);
 
 Route::get('/gallery', ['as' => 'gallery', function () {
     return view('gallery');
@@ -42,6 +42,9 @@ Route::get('/gallery', ['as' => 'gallery', function () {
 
 Route::get('contact', 'ContactController@getContact')->name('contact');
 Route::post('contact', 'ContactController@postContact');
+
+
+Route::resource('posts', 'PostsController');
 
 ////// EXEMPLES D'UTILISATION
 
