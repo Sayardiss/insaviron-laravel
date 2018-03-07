@@ -1,10 +1,10 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
+@section('title')
     Inscription
 @stop
 
-@section('contenu')
+@section('content')
 <div class="panel panel-info">
 	<div class="panel-heading">Inscription d'une équipe</div>
 	<div class="panel-body">

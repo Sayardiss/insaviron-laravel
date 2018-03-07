@@ -1,10 +1,10 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
+@section('title')
     Infos pratiques
 @stop
 
-@section('contenu')
+@section('content')
 <section>
   <div class="map fadeInDown">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10872.479923688674!2d2.3962882!3d47.0574967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7278fd07015fc78c!2sBase+de+Voile+du+Val+d&#39;Auron!5e0!3m2!1sfr!2sfr!4v1519764427844" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

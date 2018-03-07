@@ -1,10 +1,10 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
+@section('title')
     Contact
 @stop
 
-@section('contenu')
+@section('content')
 
 <br>
 	<!-- <div class="col-sm-offset-3 col-sm-6"> -->

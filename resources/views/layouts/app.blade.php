@@ -6,8 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>
-      INSAviron - @yield('titre')
+      INSAviron - @yield('title')
     </title>
 
     <!-- Bootstrap -->
@@ -29,12 +33,16 @@
     @include('inc.navbar')
 
 
+
+
     <!-- Contenu principal de la page -->
-    <div id="wrap">
-      <div id="main" class="container clear-top">
-        {{-- Inclure les messages de validation --}}
-        @include('inc.messages')
-        @yield('contenu')
+    <div id="app">
+      <div id="wrap">
+        <div id="main" class="container clear-top">
+          {{-- Inclure les messages de validation --}}
+          @include('inc.messages')
+          @yield('content')
+        </div>
       </div>
     </div>
 

@@ -1,10 +1,10 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
+@section('title')
     Programmation, résultats et news
 @stop
 
-@section('contenu')
+@section('content')
   <a href="{{ route('news.index') }}" class="btn btn-default">Retour</a>
 
   {!! Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST']) !!}

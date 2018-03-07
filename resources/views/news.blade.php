@@ -1,10 +1,10 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
+@section('title')
     Programmation, résultats et news
 @stop
 
-@section('contenu')
+@section('content')
   <section id="middle" class="fadeInDown">
       <div class="container">
 

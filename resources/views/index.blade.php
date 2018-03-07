@@ -1,10 +1,10 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
+@section('title')
     Accueil
 @stop
 
-@section('contenu')
+@section('content')
 <div class="slider">
   <div class="container">
     <div id="about-slider">

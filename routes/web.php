@@ -102,3 +102,7 @@ Route::resource('news', 'PostsController');
 //
 // // Ressources 1/2
 // Route::resource('user', 'UserController');
+
+// Partie authentification
+Auth::routes();
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
