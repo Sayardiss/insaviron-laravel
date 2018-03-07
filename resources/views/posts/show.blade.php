@@ -5,7 +5,8 @@
 @stop
 
 @section('contenu')
-  <section {{--id="middle"--}} class="fadeInDown">
+  <a href="{{ route('news.index') }}" class="btn btn-default">Retour</a>
+  <section class="fadeInDown">
       <div class="container">
 
         <div class="wow fadeInDown">
@@ -13,12 +14,9 @@
             <h2>Programmation, résultats et news</h2>
             <div class="panel-group" id="accordion1">
 
-              @if(count($posts) > 0)
-                @foreach($posts as $key => $post)
-                  <!-- Chaque ligne -->
-                  <div class="panel panel-default">
+              <div class="panel panel-default">
                     {{-- Titre --}}
-                    <div class="panel-heading {{ ($key == 0) ? 'active' : '' }}">
+                    <div class="panel-heading active">
                       <h3 class="panel-title">
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{$post->id}}">
                           {{ $post->title }}
@@ -28,7 +26,7 @@
                     </div>
 
                     {{-- Contenu, post->id est pour le JS --}}
-                    <div id="collapse{{$post->id}}" class="panel-collapse collapse {{ ($key == 0) ? 'in' : '' }}">
+                    <div id="collapse{{$post->id}}" class="panel-collapse collapse in">
                       <div class="panel-body">
                           <div class="media accordion-inner">
                             {{-- Gérer la gestion d'images si pathPic est défini --}}
@@ -48,15 +46,17 @@
                     </div>
 
                   </div>
-                @endforeach
-                {{-- Pagination --}}
-                {{-- {{ $posts->links() }} --}}
-              @else
-                <p>Pour l'instant, il n'y a pas d'article !</p>
-              @endif
 
             </div><!--/#accordion1-->
           </div><!--/#accordion-->
+          <hr />
+          <a href="{{ route('news.edit', $post->id) }}" class="btn btn-default">Edit</a>
+          {{-- <a href="{{ route('news.edit', $post->id) }}" class="btn btn-default">Delete</a> --}}
+          {{-- Insertion du bouton pour aller au controlleur destroy --}}
+          {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+              {{Form::hidden('_method', 'DELETE')}}
+              {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+          {!! Form::close() !!}
         </div><!--/#wow-->
 
       </div><!--/.container-->

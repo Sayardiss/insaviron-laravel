@@ -44,7 +44,7 @@ Route::get('contact', 'ContactController@getContact')->name('contact');
 Route::post('contact', 'ContactController@postContact');
 
 
-Route::resource('posts', 'PostsController');
+Route::resource('news', 'PostsController');
 
 ////// EXEMPLES D'UTILISATION
 

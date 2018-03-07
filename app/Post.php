@@ -10,6 +10,6 @@ class Post extends Model
     protected $table = 'posts';
 
     // Primary key
-    public $primaryKey = 'post_id';
+    //public $primaryKey = 'post_id';
 
 }
