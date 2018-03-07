@@ -28,9 +28,12 @@
     <!-- Menu principal   -->
     @include('inc.navbar')
 
+
     <!-- Contenu principal de la page -->
     <div id="wrap">
       <div id="main" class="container clear-top">
+        {{-- Inclure les messages de validation --}}
+        @include('inc.messages')
         @yield('contenu')
       </div>
     </div>
@@ -44,5 +47,11 @@
     <script src="{{ URL::asset('js/jquery.isotope.min.js') }}"></script>
     <script src="{{ URL::asset('js/wow.min.js') }}"></script>
     <script src="{{ URL::asset('js/main.js') }}"></script>
+
+    {{-- Ckeditor --}}
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+      CKEDITOR.replace('article-ckeditor');
+    </script>
   </body>
 </html>
