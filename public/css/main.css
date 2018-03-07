@@ -415,6 +415,14 @@ ul.social-share li a:hover {
   margin:auto;
 }
 
+.img-thumbnail {
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
+
 #feature {
   background: #f2f2f2;
   padding-bottom: 40px;

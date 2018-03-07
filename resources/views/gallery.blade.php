@@ -48,6 +48,57 @@
 
 
 <div align="center">
+  <ul class="list-inline">
+  @foreach(File::allFiles("images/gallery") as $key => $file)
+    <li>
+      <li data-toggle="modal" data-target="#myModal">
+        <a href="#myGallery" data-slide-to="{{ $key }}"><img class="img-thumbnail" src="{{$file}}"><br />
+          {{ pathinfo($file, PATHINFO_FILENAME) }}</a>
+        </li>
+    </li>
+  @endforeach
+  </ul>
+</div>
+
+<!--begin modal window-->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <div class="pull-left">My Gallery Title</div> -->
+        <!-- <button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button> -->
+      </div>
+
+      <div class="modal-body">
+        <!--begin carousel-->
+        <div id="myGallery" class="carousel slide" data-interval="false">
+          <div class="carousel-inner">
+            @foreach(File::allFiles("images/gallery") as $key => $file)
+              <div class="item {{ ($key == 0) ? 'active' : '' }}"> <img src="{{$file}}" alt="{{ pathinfo($file, PATHINFO_FILENAME) }}">
+                <div class="carousel-caption">
+                  <h3>{{ pathinfo($file, PATHINFO_FILENAME) }}</h3>
+                  {{-- <p>DESCRIPTION X</p> --}}
+                </div>
+              </div>
+            @endforeach
+          </div><!--end carousel-inner-->
+
+          <!--Begin Previous and Next buttons-->
+          <a class="left carousel-control" href="#myGallery" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a>
+          <a class="right carousel-control" href="#myGallery" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div><!--end carousel-->
+      </div>  <!--end modal-body-->
+
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button>
+        <!-- <button class="btn-sm close" type="button" data-dismiss="modal">Close</button> -->
+      </div><!--end modal-footer-->
+    </div><!--end modal-content-->
+  </div><!--end modal-dialoge-->
+</div><!--end myModal-->
+
+
+{{-- <div align="center">
 
   <ul class="list-inline">
     <li data-toggle="modal" data-target="#myModal"><a href="#myGallery" data-slide-to="0"><img class="img-thumbnail" src="https://placeimg.com/200/133/nature/1"><br>
@@ -128,5 +179,5 @@
       </div><!--end modal-content-->
     </div><!--end modal-dialoge-->
   </div><!--end myModal-->
-</div>
+</div> --}}
 @stop
