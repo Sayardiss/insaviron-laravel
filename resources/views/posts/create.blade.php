@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Programmation, résultats et news
+    Création d'une news ou programmation
 @stop
 
 @section('content')

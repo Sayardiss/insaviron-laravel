@@ -46,6 +46,11 @@ Route::post('contact', 'ContactController@postContact');
 
 Route::resource('news', 'PostsController');
 
+
+Route::resource('sponsors', 'SponsorsController'); // Uniquement pour administration, pas besoin d'index
+Route::resource('results', 'ResultsController'); // Uniquement pour administration, pas besoin d'index
+
+
 ////// EXEMPLES D'UTILISATION
 
 // // Aller chercher le controller dans WelcomeController

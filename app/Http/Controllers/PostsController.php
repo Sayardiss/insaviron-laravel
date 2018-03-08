@@ -11,12 +11,11 @@ use Michelf\Markdown;
 
 class PostsController extends Controller
 {
+    // Permet de gérer les pages autorisées sans connexion
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-
-
 
     /**
      * Display a listing of the resource.
@@ -29,11 +28,6 @@ class PostsController extends Controller
         // $posts = Post::orderBy('created_at', 'desc')->paginate(6);
         return view('posts.index')->with('posts', $posts);
     }
-
-    // public function md($text)
-    // {
-    //   return Markdown::defaultTransform("$text");
-    // }
 
     /**
      * Show the form for creating a new resource.
