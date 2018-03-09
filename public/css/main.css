@@ -254,16 +254,17 @@ ul.social-share li a:hover {
 }
 
  .navbar-nav{
-  margin-top: 12px;
+  margin-top: 5px;
  }
 
 .navbar-nav>li{
-  margin-left: 35px;
+  margin-left: 5px;
   padding-bottom: 28px;
+  vertical-align: middle;
 }
 
 .navbar-fixed-top .navbar-nav > li > a {
-  padding: 5px 12px;
+  padding: 10px 12px;
   margin: 0;
   border-radius: 3px;
   color: #fff;

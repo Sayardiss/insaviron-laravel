@@ -12,6 +12,8 @@
 */
 
 Route::get('/', ['as' => 'home', function () {
+  //LanguageSwitcher::setLanguage('fr');
+
     return view('index');
 }]);
 
@@ -32,6 +34,7 @@ Route::get('/inscription', ['as' => 'inscription', function () {
 // }]);
 
 Route::get('/gallery', ['as' => 'gallery', function () {
+  //LanguageSwitcher::setLanguage('fr');
     return view('gallery');
 }]);
 
@@ -50,6 +53,8 @@ Route::resource('news', 'PostsController');
 Route::resource('sponsors', 'SponsorsController'); // Uniquement pour administration, pas besoin d'index
 Route::resource('results', 'ResultsController'); // Uniquement pour administration, pas besoin d'index
 
+
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
 
 ////// EXEMPLES D'UTILISATION
 
