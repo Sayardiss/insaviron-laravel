@@ -55,7 +55,7 @@
 
                 <ul class="nav navbar-nav">
                     <li class="{{ isActiveRoute('home') }}"><a href="{{ route('home') }}">Accueil</a></li>
-                    <li class="{{ isActiveRoute('about-us') }}"><a href="{{ route('about-us') }}">À propos</a></li>
+                    {{-- <li class="{{ isActiveRoute('about-us') }}"><a href="{{ route('about-us') }}">À propos</a></li> --}}
                     <li class="{{ isActiveRoute('infos') }}"><a href="{{ route('infos') }}">Infos pratiques</a></li>
                     <li class="{{ isActiveRoute('inscription') }}"><a href="{{ route('inscription') }}">Inscription</a></li>
                     <li class="{{ isActiveRoute('news.index') }}"><a href="{{ route('news.index') }}">Programmation, résultats et news</a></li>

@@ -17,9 +17,10 @@ Route::get('/', ['as' => 'home', function () {
     return view('index');
 }]);
 
-Route::get('/apropos', ['as' => 'about-us', function () {
-    return view('about-us');
-}]);
+// Inutile, autant utiliser la page d'accueil
+// Route::get('/apropos', ['as' => 'about-us', function () {
+//     return view('about-us');
+// }]);
 
 Route::get('/infos', ['as' => 'infos', function () {
     return view('infos');
