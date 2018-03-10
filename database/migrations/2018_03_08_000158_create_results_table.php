@@ -15,7 +15,7 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('event_name');
+            $table->string('name');
             $table->integer('year');
             $table->mediumText('description');
             $table->timestamps();
