@@ -55,7 +55,7 @@
           {{-- Insertion du bouton pour aller au controlleur destroy --}}
           {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
               {{Form::hidden('_method', 'DELETE')}}
-              {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+              {{Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => "return confirm('Supprimer ?');"])}}
           {!! Form::close() !!}
         </div><!--/#wow-->
 

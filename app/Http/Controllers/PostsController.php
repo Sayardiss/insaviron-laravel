@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 // Utuliser les méthodes pour manipuler la BDD
 use App\Post;
+use App\Result;
 use Michelf\Markdown;
 
 
@@ -14,7 +15,7 @@ class PostsController extends Controller
     // Permet de gérer les pages autorisées sans connexion
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index']]);
     }
 
     /**
@@ -25,8 +26,9 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->get();
+        $results = Result::orderBy('created_at', 'desc')->get();
         // $posts = Post::orderBy('created_at', 'desc')->paginate(6);
-        return view('posts.index')->with('posts', $posts);
+        return view('posts.index')->with('posts', $posts)->with('results', $results);
     }
 
     /**

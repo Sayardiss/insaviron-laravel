@@ -14,11 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Interface de gestion
 
                     {{-- Liens pour administrer le site --}}
                     <br />
-                    <a href="{{ route('news.create') }}" class="btn btn-primary">Create Post</a>
+                    <a href="{{ route('news.create') }}" class="btn btn-primary">Ajouter une news</a>
+                    <a href="{{ route('sponsors.create') }}" class="btn btn-primary">Ajouter un sponsor</a>
+                    <a href="{{ route('results.create') }}" class="btn btn-primary">Ajouter un résultat</a>
+
                 </div>
             </div>
         </div>

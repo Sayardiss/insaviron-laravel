@@ -101,7 +101,7 @@
                 <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="/images/flags/24x24/{{ Config::get('flags')[App::getLocale()] }}.png" alt="{{ Config::get('languages')[App::getLocale()] }}"/>
+                        <img src="/images/flags/{{ Config::get('flags')[App::getLocale()] }}.png" alt="{{ Config::get('languages')[App::getLocale()] }}"/>
                         {{-- Texte --}}
                         {{-- {{ Config::get('languages')[App::getLocale()] }} --}}
                     </a>
@@ -110,7 +110,7 @@
                             @if ($lang != App::getLocale())
                                 <li>
                                     <a href="{{ route('lang.switch', $lang) }}">
-                                      <img src="/images/flags/24x24/{{ Config::get('flags')[$lang] }}.png" alt="{{$language}}"/>
+                                      <img src="/images/flags/{{ Config::get('flags')[$lang] }}.png" alt="{{$language}}"/>
                                     </a>
                                     {{-- <a href="{{ route('lang.switch', $lang) }}">{{$language}}</a> --}}
                                 </li>

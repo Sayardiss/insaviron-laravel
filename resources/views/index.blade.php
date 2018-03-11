@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<?php use App\Sponsor; ?>
+
 @section('title')
     Accueil
 @stop
@@ -7,66 +9,102 @@
 @section('content')
  <section id="feature" >
       <div class="container">
-         <div class="center wow fadeInDown">
-              <h2>@lang('messages.description')</h2>
-              <p class="lead">@lang('messages.descriptionMain')</p>
-          </div>
+
 
           <div class="row">
               <div class="features">
-                  <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                      <div class="feature-wrap">
-                          <i class="fa fa-laptop"></i>
-                          <h2>Fresh and Clean</h2>
-                          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                      </div>
-                  </div><!--/.col-md-4-->
+                <div class="center wow fadeInDown">
 
-                  <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                      <div class="feature-wrap">
-                          <i class="fa fa-comments"></i>
-                          <h2>Retina ready</h2>
-                          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                      </div>
-                  </div><!--/.col-md-4-->
+                  {{-- Informations sur l'association --}}
+                  <div class="center wow fadeInDown sponsor">
+                      {{-- <img class="sponsorPic" src="/images/sponsors/{{$sponsor->pathPic}}" /> --}}
+                      <h2>@lang('messages.description')</h2>
+                      <p class="lead">@lang('messages.descriptionMain')</p>
 
-                  <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                      <div class="feature-wrap">
-                          <i class="fa fa-cloud-download"></i>
-                          <h2>Easy to customize</h2>
-                          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                      {{-- Liens du sponsor --}}
+                      <div class="">
+                        <div class="feature-wrap">
+                          <a href="https://www.facebook.com/insaviron">
+                            <i class="fa fa-facebook" ></i>
+                          </a>
+                        </div>
                       </div>
-                  </div><!--/.col-md-4-->
+                  </div>
 
-                  <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                      <div class="feature-wrap">
-                          <i class="fa fa-leaf"></i>
-                          <h2>Adipisicing elit</h2>
-                          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                      </div>
-                  </div><!--/.col-md-4-->
+                  {{-- Informations sur le groupe INSA --}}
+                  <div class="center wow fadeInDown sponsor">
+                      {{-- <img class="sponsorPic" src="/images/sponsors/{{$sponsor->pathPic}}" /> --}}
+                      <h2>@lang('messages.groupeINSA')</h2>
+                      <p class="lead">@lang('messages.groupeINSAdes')</p>
 
-                  <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                      <div class="feature-wrap">
-                          <i class="fa fa-cogs"></i>
-                          <h2>Sed do eiusmod</h2>
-                          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                      {{-- Liens du sponsor --}}
+                      <div class="">
+                        <div class="feature-wrap">
+                          <a href="https://www.facebook.com/groupeinsa">
+                            <i class="fa fa-facebook" ></i>
+                          </a>
+                        </div>
                       </div>
-                  </div><!--/.col-md-4-->
+                      <div class="">
+                        <div class="feature-wrap">
+                          <a href="https://http://www.groupe-insa.fr">
+                            <i class="fa fa-sign-in" ></i>
+                          </a>
+                        </div>
+                      </div>
+                  </div>
 
-                  <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                      <div class="feature-wrap">
-                          <i class="fa fa-heart"></i>
-                          <h2>Labore et dolore</h2>
-                          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                      </div>
-                  </div><!--/.col-md-4-->
-              </div><!--/.services-->
-          </div><!--/.row-->
+                  {{-- Affichage des sponsors --}}
+                  @foreach (($sponsors = Sponsor::all()) as $key => $sponsor)
+
+                    {{-- Administration de l'entrée --}}
+                    @auth
+                      <hr />
+                      <a href="{{ route('sponsors.edit', $sponsor->id) }}" class="btn btn-default">Edit</a>
+                      {{-- <a href="{{ route('sponsors.edit', $sponsor->id) }}" class="btn btn-default">Delete</a> --}}
+                      {{-- Insertion du bouton pour aller au controlleur destroy --}}
+                      {!! Form::open(['action' => ['SponsorsController@destroy', $sponsor->id], 'method' => 'POST']) !!}
+                          {{Form::hidden('_method', 'DELETE')}}
+                          {{Form::submit('Delete', ['class' => 'btn btn-danger', 'onclick' => "return confirm('Supprimer ?');"])}}
+                      {!! Form::close() !!}
+                    @endauth
+
+
+                    <div class="center wow fadeInDown sponsor">
+                        <img class="sponsorPic" src="{{$sponsor->pathPic}}" />
+                        <h2>{{ $sponsor->name }}</h2>
+                        <p class="lead">{{ $sponsor->description }}</p>
+
+
+
+
+                        {{-- Liens du sponsor --}}
+                        <div class="">
+                          @if (isset($sponsor->link_fb))
+                            <div class="feature-wrap">
+                              <a href="{{ $sponsor->link_fb }}">
+                                <i class="fa fa-facebook" ></i>
+                              </a>
+                            </div>
+                          @endif
+                          @if (isset($sponsor->link_web))
+                            <div class="feature-wrap">
+                              <a href="{{ $sponsor->link_web }}">
+                                <i class="fa fa-sign-in" ></i>
+                              </a>
+                            </div>
+                          @endif
+                        </div>
+                    </div>
+
+                  @endforeach
+                </div>
+              </div>
+            </div>
       </div><!--/.container-->
   </section><!--/#feature-->
 
- <section id="recent-works">
+ {{-- <section id="recent-works">
       <div class="container">
           <div class="center wow fadeInDown">
               <h2>Recent Works</h2>
@@ -311,26 +349,9 @@
 
           </div><!--/.row-->
       </div><!--/.container-->
-  </section><!--/#middle-->
+  </section><!--/#middle--> --}}
 
 <!-- garbage02 -->
 
 <!-- garbage01 -->
 @stop
-
-
-
-
-
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-        </div>
