@@ -75,6 +75,13 @@
       <!-- Section upload du fichier -->
       <div class="col-md-12">
         <h2>Veuillez déposer une feuille Excel pour la composition des équipes</h2>
+
+        <a href="{{ URL::asset('inscription.xls') }}">
+          <label class="btn btn-primary">
+          Téléchargez ici le template
+          </label>
+        </a>
+
         <div class="form-group {!! $errors->has('xls') ? 'has-error' : '' !!}">
           <label class="btn btn-primary">
             Uploader une feuille Excel...

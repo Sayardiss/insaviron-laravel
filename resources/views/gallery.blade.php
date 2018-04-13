@@ -53,7 +53,8 @@
     <li>
       <li data-toggle="modal" data-target="#myModal">
         <a href="#myGallery" data-slide-to="{{ $key }}"><img class="img-thumbnail" src="{{$file}}"><br />
-          {{ pathinfo($file, PATHINFO_FILENAME) }}</a>
+          {{-- {{ pathinfo($file, PATHINFO_FILENAME) }} --}}
+        </a>
         </li>
     </li>
   @endforeach
@@ -76,7 +77,7 @@
             @foreach(File::allFiles("images/gallery") as $key => $file)
               <div class="item {{ ($key == 0) ? 'active' : '' }}"> <img src="{{$file}}" alt="{{ pathinfo($file, PATHINFO_FILENAME) }}">
                 <div class="carousel-caption">
-                  <h3>{{ pathinfo($file, PATHINFO_FILENAME) }}</h3>
+                  <h2>{{ pathinfo($file, PATHINFO_FILENAME) }}</h2>
                   {{-- <p>DESCRIPTION X</p> --}}
                 </div>
               </div>
