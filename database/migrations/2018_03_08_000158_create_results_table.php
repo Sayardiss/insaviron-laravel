@@ -18,6 +18,7 @@ class CreateResultsTable extends Migration
             $table->string('name');
             $table->integer('year');
             $table->mediumText('description');
+            $table->string('pdf');
             $table->timestamps();
         });
     }

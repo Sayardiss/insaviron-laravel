@@ -16,6 +16,10 @@
       {{Form::label('body', 'Body')}}
       {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body'])}}
     </div>
+    <div class="form-group">
+      {{Form::label('pdf', 'Nom du fichier PDF (si existant)')}}
+      {{Form::textarea('pdf', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'toulouse_2018.pdf'])}}
+    </div>
     {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
   {!! Form::close() !!}
 @stop

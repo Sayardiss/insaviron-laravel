@@ -59,6 +59,7 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->pdf = $request->input('pdf');
         $post->save();
 
         return redirect( route('news.index') )->with('success', 'Post Created');
@@ -107,6 +108,7 @@ class PostsController extends Controller
       $post = Post::find($id);
       $post->title = $request->input('title');
       $post->body = $request->input('body');
+      $post->pdf = $request->input('pdf');
       $post->save();
 
       return redirect( route('news.index') )->with('success', 'Post Updated');

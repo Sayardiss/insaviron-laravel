@@ -99,7 +99,14 @@
                           <div class="media accordion-inner">
                             <div class="media-body">
                               {{-- !! pour ne pas échapper les balises --}}
+
                               {!! markdownToHtml($result->description) !!}
+
+                              {{-- Section pour le téléchargement du PDF --}}
+                              @if($result->pdf)
+                                <a href="{{ URL::asset('pdf/'.$result->pdf) }}" class="btn btn-default">Télécharger le PDF du résultat</a>
+                              @endif
+
                               <p>Écrit le {{$result->created_at}}</p>
 
                               {{-- Administration de l'entrée --}}
