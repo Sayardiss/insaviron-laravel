@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-      INSAviron - @yield('title')
+      {{ config('app.name', 'Laravel') }} - @yield('title')
     </title>
 
     <!-- Bootstrap -->
