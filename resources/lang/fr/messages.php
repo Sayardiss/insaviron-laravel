@@ -5,6 +5,15 @@ return [
     'descriptionMain'          => 'Ceci est la description de l\'association<br /> en français',
     'groupeINSA'              => "Groupe <strong>INSA</strong>",
     'groupeINSAdes'           => "Les instituts nationaux des sciences appliquées (INSA) sont des établissements publics français de recherche et d’enseignement supérieur. Plus grand ensemble de formation d'ingénieurs en France (10 % des ingénieurs), ils délivrent principalement le diplôme d’ingénieur après une formation de cinq années après le baccalauréat.",
+
+    'navbar'                  => [
+      'Main'       => "Accueil",
+      'Info'        => "Informations",
+      'Inscription'       => "Inscription",
+      'News'        => "News et résultats",
+      'Gallery'       => "Gallerie",
+      'Contact'       => "Contact",
+    ]
 ];
 
 
