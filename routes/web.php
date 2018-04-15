@@ -26,9 +26,9 @@ Route::get('/infos', ['as' => 'infos', function () {
     return view('infos');
 }]);
 
-Route::get('/inscription', ['as' => 'inscription', function () {
-    return view('inscription');
-}]);
+// Route::get('/inscription', ['as' => 'inscription', function () {
+//     return view('inscription');
+// }]);
 
 // Route::get('/news', ['as' => 'news', function () {
 //     return view('news');
@@ -46,6 +46,9 @@ Route::get('/gallery', ['as' => 'gallery', function () {
 
 Route::get('contact', 'ContactController@getContact')->name('contact');
 Route::post('contact', 'ContactController@postContact');
+
+Route::get('inscription', 'InscriptionController@getInscription')->name('inscription');
+Route::post('inscription', 'InscriptionController@postInscription');
 
 
 Route::resource('news', 'PostsController');

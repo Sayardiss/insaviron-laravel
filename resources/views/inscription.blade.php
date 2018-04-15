@@ -72,6 +72,8 @@
         </div>
       </div>
 
+
+
       <!-- Section upload du fichier -->
       <div class="col-md-12">
         <h2>Veuillez déposer une feuille Excel pour la composition des équipes</h2>
@@ -90,6 +92,13 @@
           </label>
         </div>
 			</div>
+
+      <!-- Location de bateaux -->
+      <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
+        <h2>Voulez-vous louer les bateaux ?</h2>
+        {!! Form::checkbox('location', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('location', '<small class="help-block">:message</small>') !!}
+      </div>
 
 			<div class="form-group {!! $errors->has('texte') ? 'has-error' : '' !!}">
 				{!! Form::textarea ('texte', null, ['class' => 'form-control', 'placeholder' => 'Précisions pour l\'organisateur']) !!}
