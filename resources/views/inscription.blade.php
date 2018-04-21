@@ -91,14 +91,17 @@
     				{!! $errors->first('xls', '<small class="help-block">:message</small>') !!}
           </label>
         </div>
+
+        <!-- Location de bateaux -->
+        <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
+          <h2 style="display:inline">Voulez-vous louer les bateaux ?</h2>
+          {!! Form::checkbox('location', null, ['class' => 'form-control']) !!}
+          {!! $errors->first('location', '<small class="help-block">:message</small>') !!}
+        </div>
+
 			</div>
 
-      <!-- Location de bateaux -->
-      <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
-        <h2>Voulez-vous louer les bateaux ?</h2>
-        {!! Form::checkbox('location', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('location', '<small class="help-block">:message</small>') !!}
-      </div>
+
 
 			<div class="form-group {!! $errors->has('texte') ? 'has-error' : '' !!}">
 				{!! Form::textarea ('texte', null, ['class' => 'form-control', 'placeholder' => 'Précisions pour l\'organisateur']) !!}

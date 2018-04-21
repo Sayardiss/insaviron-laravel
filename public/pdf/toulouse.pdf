@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+use Net::IRC;
+
+sub on_connect {
+    my $self = shift;
+
+    print "Joining #Root-Me_Challenge...\n";
+    $self->join('#Root-Me_Challenge');
+    $self->privmsg("Candy", "!ep1");
+}
+
+sub on_msg {
+    my $self = shift;
+    my $evt = shift;
+
+    my @a = $evt->args;
+    my $n = pop(@a);
+
+    if ($n =~ /([0-9]+)\/([0-9]+)/) {
+        print "got: $1 and $2 \n";
+        $rep = sqrt($1) * $2;
+        $rtxt = sprintf("%.2f", $rep);
+        print "rep: $rtxt\n";
+        $self->privmsg("Candy", "!ep1 -rep $rtxt");
+    }
+    if ($n =~ /le pass de validation est/) {
+        print "password: $n\n";
+        exit(0);
+    }
+}
+
+$irc = new Net::IRC;
+$conn = $irc->newconn(Server  => 'irc.root-me.org', Port => 6667);
+$conn->add_handler('376', \&on_connect);
+$conn->add_handler('msg', \&on_msg);
+
+$irc->start();

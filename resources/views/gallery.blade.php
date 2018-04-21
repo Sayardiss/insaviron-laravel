@@ -19,18 +19,12 @@
 
 
         <div class="carousel-inner">
-          <div class="item active">
-            <img src="images/slider_one.jpg" class="img-responsive" alt="">
-           </div>
-           <div class="item">
-            <img src="images/gallery/gallery1.jpg" class="img-responsive" alt="">
-           </div>
-           <div class="item">
-            <img src="images/gallery/gallery2.jpg" class="img-responsive" alt="">
-           </div>
+          @foreach(File::allFiles("images/slide_gallery") as $key => $file)
+            <div class="item {{ ($key == 0) ? 'active' : '' }}">
+              <img src="{{$file}}" alt="{{ pathinfo($file, PATHINFO_FILENAME) }}" class="img-responsive">
+            </div>
+          @endforeach
         </div>
-
-
 
         <!-- Boutons droite/gauche -->
         <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
