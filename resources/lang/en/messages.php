@@ -7,11 +7,11 @@ return [
     'groupeINSAdes'           => "Short description",
 
     'navbar'                  => [
-      'Main'       => "english",
-      'Info'        => "english",
-      'Inscription'       => "english",
-      'News'        => "english et résultats",
-      'Gallery'       => "english",
-      'Contact'       => "english",
+      'Main'       => "Main page",
+      'Info'        => "Useful information",
+      'Inscription'       => "Register for an event",
+      'News'        => "News, program and results",
+      'Gallery'       => "Gallery",
+      'Contact'       => "Contact us",
     ]
 ];

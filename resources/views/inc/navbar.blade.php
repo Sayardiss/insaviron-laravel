@@ -59,14 +59,14 @@
                     <li class="{{ isActiveRoute('infos') }}"><a href="{{ route('infos') }}">@lang('messages.navbar.Info')</a></li>
                     <li class="{{ isActiveRoute('inscription') }}"><a href="{{ route('inscription') }}">@lang('messages.navbar.Inscription')</a></li>
                     <li class="{{ isActiveRoute('news.index') }}"><a href="{{ route('news.index') }}">@lang('messages.navbar.News')</a></li>
-                    <li class="{{ isActiveRoute('gallery') }}"><a href="{{ route('gallery') }}">@lang('messages.navbar.Gallery')</a></li>
+                    <li class="{{ isActiveRoute('gallery') }}"><a href="{{ route('gallery', []) }}">@lang('messages.navbar.Gallery')</a></li>
                     <li class="{{ isActiveRoute('contact') }}"><a href="{{ route('contact') }}">@lang('messages.navbar.Contact')</a></li>
                 </ul>
 
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Accès zone administration -->                        
+                    <!-- Accès zone administration -->
                     @auth
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">

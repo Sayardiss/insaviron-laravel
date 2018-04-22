@@ -34,8 +34,7 @@ Route::get('/infos', ['as' => 'infos', function () {
 //     return view('news');
 // }]);
 
-Route::get('/gallery', ['as' => 'gallery', function () {
-  //LanguageSwitcher::setLanguage('fr');
+Route::get('/gallery/{folder?}', ['as' => 'gallery', function () {
     return view('gallery');
 }]);
 
