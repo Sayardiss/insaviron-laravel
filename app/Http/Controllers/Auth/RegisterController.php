@@ -37,8 +37,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         // Pour désactiver l'inscription
-        $this->middleware('auth');
-        //$this->middleware('guest');
+        // $this->middleware('auth');
+        $this->middleware('guest');
     }
 
     /**

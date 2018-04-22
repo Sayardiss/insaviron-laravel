@@ -17,6 +17,8 @@ class CreatePostsTable extends Migration
           $table->increments('id');
           $table->string('title');
           $table->mediumText('body');
+          $table->boolean('program')->default(0); // TRUE si c'est une programmation, news sinon
+          $table->string('pdf')->nullable();
           $table->string('pathPic')->nullable(); // Chemin vers une photo factultative
           $table->timestamps();
         });

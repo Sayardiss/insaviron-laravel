@@ -25,10 +25,12 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
         $results = Result::orderBy('created_at', 'desc')->get();
-        // $posts = Post::orderBy('created_at', 'desc')->paginate(6);
-        return view('posts.index')->with('posts', $posts)->with('results', $results);
+        $news = Post::where('program', 0)->orderBy('created_at', 'desc')->get();
+        $programs = Post::where('program', 1)->orderBy('created_at', 'desc')->get();
+        return view('posts.index')->with('news', $news)
+                                  ->with('programs', $programs)
+                                  ->with('results', $results);
     }
 
     /**
@@ -60,6 +62,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->pdf = $request->input('pdf');
+        $post->program = $request->input('isProgram');
         $post->save();
 
         return redirect( route('news.index') )->with('success', 'Post Created');
