@@ -38,36 +38,36 @@
         <h2>Nombre de bateaux par catégorie (3 bateaux par catégorie au maximum)</h2>
         <div class="list-group row">
           <div class="col-md-2">
-            <a href="#" class="list-group-item">
+            <div class="list-group-item">
               <label for="4_fem"><h4 class="list-group-item-heading">4x féminin</h4></label>
               {{ Form::selectRange('4_fem', 0, 3, 0, ['class' => 'boat_select form-control']) }}
-            </a>
-            <a href="#" class="list-group-item">
+            </div>
+            <div class="list-group-item">
               <label for="8_fem"><h4 class="list-group-item-heading">8- féminin</h4></label>
               {{ Form::selectRange('8_fem', 0, 3, 0, ['class' => 'boat_select form-control']) }}
-            </a>
+            </div>
           </div>
 
           <div class="col-md-2">
-            <a href="#" class="list-group-item">
+            <div class="list-group-item">
               <label for="4_mal"><h4 class="list-group-item-heading">4x masculin</h4></label>
               {{ Form::selectRange('4_mal', 0, 3, 0, ['class' => 'boat_select form-control']) }}
-            </a>
-            <a href="#" class="list-group-item">
+            </div>
+            <div class="list-group-item">
               <label for="8_mal"><h4 class="list-group-item-heading">8- masculin</h4></label>
               {{ Form::selectRange('8_mal', 0, 3, 0, ['class' => 'boat_select form-control']) }}
-            </a>
+            </div>
           </div>
 
           <div class="col-md-2">
-            <a href="#" class="list-group-item">
+            <div class="list-group-item">
               <label for="4_mix"><h4 class="list-group-item-heading">4x mixte</h4></label>
               {{ Form::selectRange('4_mix', 0, 3, 0, ['class' => 'boat_select form-control']) }}
-            </a>
-            <a href="#" class="list-group-item">
+            </div>
+            <div class="list-group-item">
               <label for="8_mix"><h4 class="list-group-item-heading">8- mixte</h4></label>
               {{ Form::selectRange('8_mix', 0, 3, 0, ['class' => 'boat_select form-control']) }}
-            </a>
+            </div>
           </div>
         </div>
       </div>
