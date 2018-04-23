@@ -1,6 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
 
 
+/* Purple : 781f56
+  Blue : 607bbc
+  Yellow : FFC300
+*/
+
 /*************************
 *******Typography******
 **************************/
@@ -214,7 +219,7 @@ body > section {
 
 .top-bar {
   padding: 10px 0;
-  background: #781f56;
+  background: #607bbc;
   /* background: #090909; */
   border-bottom: 1px solid #222;
   line-height: 28px;
@@ -263,7 +268,7 @@ ul.social-share li a:hover {
 .navbar {
   border-radius: 0;
   margin-bottom: 0;
-  background: #781F56;
+  background: #607bbc;
   padding: 15px 0;
   padding-bottom: 0;
 }
@@ -1863,7 +1868,7 @@ ul.sidebar-gallery {
   padding-top: 30px;
   padding-bottom: 30px;
   color: #fff;
-  background: #781F56;
+  background: #607bbc;
 }
 
 #footer a {
