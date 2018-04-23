@@ -7,50 +7,10 @@
 @stop
 
 @section('content')
-
-  <style>
-
-  #holder {
-    position:center;
-    width:100%;
-    height:100%;
-    padding:5px;
-  }
-
-  #holder img {
-    display: block;
-    margin: auto;
-    max-width:50%;
-
-    max-height:50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding:5px;
-  }
-
-  .parallax {
-      /* The image used */
-      background-image: url({{URL::asset('images/parallax.jpg')}});
-
-      /* Set a specific height */
-      height: 500px;
-
-      /* Create the parallax scrolling effect */
-      margin-top : 15px;
-      margin-right:30px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
-  </style>
-
-
-
  <section id="feature" >
       <div class="container">
         <div class="parallax">
-          <div id="holder">
+          <div id="logo_parallax">
             <img src={{URL::asset('images/RowINSA.png')}}>
           </div>
         </div>
