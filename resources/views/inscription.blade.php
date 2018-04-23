@@ -94,8 +94,9 @@
 
         <!-- Location de bateaux -->
         <div class="form-group {!! $errors->has('location') ? 'has-error' : '' !!}">
-          <h2 style="display:inline">Voulez-vous louer les bateaux ?</h2>
-          {!! Form::checkbox('location', null, ['class' => 'form-control']) !!}
+          {{-- <h2>Voulez-vous louer les bateaux ?</h2> --}}
+          {{ Form::label('location', '<h2 style="display:inline">Location de bateaux     </h2>', [], false) }}
+          {!! Form::checkbox('location', null, false, ['class' => 'checkbox', "style" => "display:inline"]) !!}
           {!! $errors->first('location', '<small class="help-block">:message</small>') !!}
         </div>
 
