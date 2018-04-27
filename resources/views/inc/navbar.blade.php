@@ -1,5 +1,6 @@
 <header id="header">
   <nav class="navbar navbar-fixed-top" role="banner">
+    <div style="width:800px; margin:0 auto;">
     {{-- <nav class="navbar navbar-default navbar-static-top"> --}}
         <div class="container">
             <div class="navbar-header">
@@ -13,9 +14,9 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                {{-- <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
-                </a>
+                </a> --}}
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -28,6 +29,9 @@
                     <li class="{{ isActiveRoute('home') }}"><a href="{{ route('home') }}">@lang('messages.navbar.Main')</a></li>
                     <li class="{{ isActiveRoute('infos') }}"><a href="{{ route('infos') }}">@lang('messages.navbar.Info')</a></li>
                     <li class="{{ isActiveRoute('inscription') }}"><a href="{{ route('inscription') }}">@lang('messages.navbar.Inscription')</a></li>
+                    <a href="{{ route('home') }}" class="pull-left" style="display: inline-block; padding-bottom: 5px;">
+                      <img src={{URL::asset('images/RowINSA.png')}} width="180">
+                    </a>
                     <li class="{{ isActiveRoute('news.index') }}"><a href="{{ route('news.index') }}">@lang('messages.navbar.News')</a></li>
                     <li class="{{ isActiveRoute('gallery') }}"><a href="{{ route('gallery', []) }}">@lang('messages.navbar.Gallery')</a></li>
                     <li class="{{ isActiveRoute('contact') }}"><a href="{{ route('contact') }}">@lang('messages.navbar.Contact')</a></li>
@@ -91,5 +95,6 @@
 
             </div>
         </div>
+      </div>
     </nav>
 </header><!--/header-->

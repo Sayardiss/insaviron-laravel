@@ -10,9 +10,9 @@
  <section id="feature" >
       <div class="container">
         <div class="parallax">
-          <div id="logo_parallax">
+          <!-- <div id="logo_parallax">
             <img src={{URL::asset('images/RowINSA.png')}}>
-          </div>
+          </div> -->
         </div>
 
         <div class="row">
