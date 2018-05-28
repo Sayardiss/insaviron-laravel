@@ -187,6 +187,11 @@ body > section {
 }
 
 
+@media (min-width: 992px)
+.container {
+    width: 1400px;
+}
+
 .center {
   text-align: center;
   /* padding-bottom: 55px; */
@@ -324,6 +329,10 @@ ul.social-share li a:hover {
   color: #fff;
   line-height: 24px;
   display: inline-block;
+}
+
+.nav>li>a {
+  font-family: "Times New Roman", "Century Gothic", "CenturyGothic", "AppleGothic", "Comic Sans MS", sans-serif;
 }
 
 .navbar-fixed-top .navbar-nav > li > a:hover{
@@ -1922,4 +1931,26 @@ ul.sidebar-gallery {
 #footer ul > li {
   display: inline-block;
   margin-left: 15px;
+}
+
+
+/* Pour la barre de menu centrée */
+#navbar-primary .navbar-nav {
+  width: 100%;
+  text-align: center;
+}
+
+#navbar-primary .navbar-nav > li {
+  display: inline-block;
+  float: none;
+}
+
+#navbar-primary .navbar-nav > li > a {
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #FFC300;
+}
+
+#navbar-primary .navbar-nav > li > a .active {
+  color: #000;
 }
