@@ -18,6 +18,12 @@
             <li data-target="#carousel-slider" data-slide-to="2"></li>
           </ol>
 
+          <div class="year_folders" align="center">
+            @foreach (File::glob("images/gallery/*", GLOB_ONLYDIR) as $dir)
+              <a href="{{route('gallery', [basename($dir)])}}" class="btn btn-default" role="button">{{basename($dir)}}</a>
+            @endforeach
+          </div>
+
 
         <div class="carousel-inner">
           @foreach(File::allFiles("images/slide_gallery") as $key => $file)
@@ -54,11 +60,11 @@
 <div align="center">
 
   {{-- Lien vers les dossiers --}}
-  <div class="container">
-    @foreach(glob('images/gallery/*', GLOB_ONLYDIR ) as $dir)
-      <a href="{{route('gallery', [basename($dir)])}}" class="btn btn-default" role="button">{{basename($dir)}}</a>
+  {{-- <div class="container">
+    @foreach(glob("$folder/*", GLOB_ONLYDIR ) as $dir)
+      <a href="{{route('gallery', [explode('/', $dir, 2)[1]])}}" class="btn btn-default" role="button">{{basename($dir)}}</a>
     @endforeach
-  </div>
+  </div> --}}
 
   {{-- Miniatures --}}
   <ul class="list-inline">
