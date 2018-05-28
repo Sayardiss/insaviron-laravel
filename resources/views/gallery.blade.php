@@ -18,7 +18,7 @@
             <li data-target="#carousel-slider" data-slide-to="2"></li>
           </ol>
 
-          <div class="year_folders" align="center">
+          <div class="year_folders" align="center" style="padding-bottom: 10px;">
             @foreach (File::glob("images/gallery/*", GLOB_ONLYDIR) as $dir)
               <a href="{{route('gallery', [basename($dir)])}}" class="btn btn-default" role="button">{{basename($dir)}}</a>
             @endforeach

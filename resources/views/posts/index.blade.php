@@ -9,8 +9,9 @@
       <div class="container">
 
         <div class="wow fadeInDown">
+          <div class="row">
 
-
+          <div class="col-sm-6">
           {{-- Partie programmation --}}
           <div class="accordion">
             <h2>Programmation</h2>
@@ -74,8 +75,9 @@
             </div><!--/#accordion1-->
           </div><!--/#accordion-->
 
-          <hr />
+          </div>
 
+          <div class="col-sm-6">
 
           {{-- Partie news --}}
           <div class="accordion">
@@ -198,10 +200,13 @@
                 @endforeach
                 {{-- Pagination --}}
                 {{-- {{ $posts->links() }} --}}
-              @endif
 
-            </div><!--/#accordion2-->
-          </div><!--/#accordion-->
+              </div><!--/#accordion2-->
+            </div><!--/#accordion-->
+              @endif
+            </div>
+
+        </div>
 
 
 
